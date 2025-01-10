@@ -4,7 +4,9 @@ import dotenv from 'dotenv';
 import { MongoClient } from 'mongodb';
 // Middleware
 const app = express();
-app.use(cors());
+app.use(cors({
+  origin: 'https://dynamic-arithmetic-028546.netlify.app'
+ }));
 app.use(express.json());
 dotenv.config();
 console.log(process.env.MONGO_URL);
