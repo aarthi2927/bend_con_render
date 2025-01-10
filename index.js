@@ -4,11 +4,11 @@ import dotenv from 'dotenv';
 import { MongoClient } from 'mongodb';
 // Middleware
 const app = express();
+app.use(express.json());
+dotenv.config();
 app.use(cors({
   origin: 'https://dynamic-arithmetic-028546.netlify.app'
  }));
-app.use(express.json());
-dotenv.config();
 console.log(process.env.MONGO_URL);
 const PORT=process.env.PORT ;
 app.use(express.json());
@@ -19,10 +19,10 @@ async function createConnection()
   console.log("Mongo is connected ✌️😊");
   return client;}
   export const client = await createConnection();
-  app.get('https://bend-con-render.onrender.com/home', (req, res) => {
+  app.get('/home', (req, res) => {
     res.send('Hi all, welcome to the home page');
   });
-  app.get('https://bend-con-render.onrender.com/nextpage', (req, res) => {
+  app.get('/nextpage', (req, res) => {
     res.send('Hi all, welcome to the next page');
   });
     app.listen(PORT, () => {
