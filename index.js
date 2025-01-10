@@ -19,10 +19,10 @@ async function createConnection()
   console.log("Mongo is connected ✌️😊");
   return client;}
   export const client = await createConnection();
-  app.get('/home', (req, res) => {
+  app.get('https://dynamic-arithmetic-028546.netlify.app/home', (req, res) => {
     res.send('Hi all, welcome to the home page');
   });
-  app.get('/nextpage', (req, res) => {
+  app.get('https://dynamic-arithmetic-028546.netlify.app/nextpage', (req, res) => {
     res.send('Hi all, welcome to the next page');
   });
     app.listen(PORT, () => {
